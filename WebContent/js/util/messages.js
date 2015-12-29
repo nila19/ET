@@ -3,7 +3,7 @@ var ERROR_INCOMPLETE = "Mandatory information is missing in the form";
 var SELECT_ITEM = "Please select an item from the list";
 
 // Keep this in synch with expense.properties.
-var APP_PATH = "/ExpenseTrackerT";
+var APP_PATH = "/ExpenseTracker";
 var PAGE_SIZE = 12;
 
 function showMessage(target, code, message) {
