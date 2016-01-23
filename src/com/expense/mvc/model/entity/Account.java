@@ -122,18 +122,22 @@ public class Account extends com.expense.mvc.model.BaseEntity implements java.io
 	@Column(name = "DISPLAY_ORDER")
 	private Short displayOrder;
 
+	@SuppressWarnings("deprecation")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "fromAccount")
 	@Cascade({ CascadeType.DELETE_ORPHAN, CascadeType.ALL })
 	private Set<Transaction> transForFromAccount = new HashSet<Transaction>(0);
 
+	@SuppressWarnings("deprecation")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "toAccount")
 	@Cascade({ CascadeType.DELETE_ORPHAN, CascadeType.ALL })
 	private Set<Transaction> transForToAccount = new HashSet<Transaction>(0);
 
+	@SuppressWarnings("deprecation")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
 	@Cascade({ CascadeType.DELETE_ORPHAN, CascadeType.ALL })
 	private Set<TallyHistory> tallyHistories = new HashSet<TallyHistory>(0);
 
+	@SuppressWarnings("deprecation")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
 	@Cascade({ CascadeType.DELETE_ORPHAN, CascadeType.ALL })
 	private Set<Bill> bills = new HashSet<Bill>(0);

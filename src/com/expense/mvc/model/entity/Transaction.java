@@ -29,8 +29,8 @@ import com.expense.utils.FormatUtils;
  */
 @Entity
 @Table(name = "transactions")
-public class Transaction extends com.expense.mvc.model.BaseEntity implements java.io.Serializable,
-		Comparable<Transaction> {
+public class Transaction extends com.expense.mvc.model.BaseEntity
+		implements java.io.Serializable, Comparable<Transaction> {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -149,6 +149,7 @@ public class Transaction extends com.expense.mvc.model.BaseEntity implements jav
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "payTran")
 	@Cascade({ CascadeType.DELETE_ORPHAN, CascadeType.ALL })
 	private Bill billPaid;

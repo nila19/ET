@@ -59,6 +59,7 @@ public class Category extends com.expense.mvc.model.BaseEntity implements java.i
 	@Column(name = "DISPLAY_ORDER")
 	private Short displayOrder;
 
+	@SuppressWarnings("deprecation")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
 	@Cascade({ CascadeType.DELETE_ORPHAN, CascadeType.ALL })
 	private Set<Transaction> transactions = new HashSet<Transaction>(0);

@@ -81,18 +81,22 @@ public class Bill extends com.expense.mvc.model.BaseEntity implements java.io.Se
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "fromBill")
 	@Cascade({ CascadeType.DELETE_ORPHAN, CascadeType.ALL })
 	private Set<Transaction> transForFromBill = new HashSet<Transaction>(0);
 
+	@SuppressWarnings("deprecation")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "toBill")
 	@Cascade({ CascadeType.DELETE_ORPHAN, CascadeType.ALL })
 	private Set<Transaction> transForToBill = new HashSet<Transaction>(0);
 
+	@SuppressWarnings("deprecation")
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "lastBill")
 	@Cascade({ CascadeType.DELETE_ORPHAN, CascadeType.ALL })
 	private Account accountHavingLastBill;
 
+	@SuppressWarnings("deprecation")
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "openBill")
 	@Cascade({ CascadeType.DELETE_ORPHAN, CascadeType.ALL })
 	private Account accountHavingOpenBill;
